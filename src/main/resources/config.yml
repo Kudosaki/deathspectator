@@ -1,0 +1,78 @@
+# ======================================================
+# DeathSpectator Configuration
+# Target: Minecraft Paper 1.21.11
+# ======================================================
+
+plugin:
+  debug: false
+
+# Camera Anchor Configuration
+spectator:
+  entity:
+    type: ARMOR_STAND
+    invisible: true
+    invulnerable: true
+    gravity: false
+    marker: true
+    small: false
+
+  # Position offset from player death location
+  position:
+    offset-x: 0.0
+    offset-y: 2.2
+    offset-z: 0.0
+
+  # Point the camera focuses on, relative to death location
+  target:
+    offset-x: 0.0
+    offset-y: 1.0
+    offset-z: 0.0
+
+  # Angular offsets
+  look:
+    enabled: true
+    yaw-offset: 0.0
+    pitch-offset: 0.0
+
+# Death & Respawn Behavior
+death:
+  respawn:
+    # Respawn delay in seconds (0 = disabled/instant respawn)
+    delay: 3
+    # Allow pressing Sneak (Shift) to skip countdown
+    sneak-to-skip: true
+    # Automatically respawn when countdown hits 0
+    automatic-respawn: true
+
+    # Visual countdown indicator settings
+    countdown:
+      enabled: true
+      # Options: ACTION_BAR, TITLE, CHAT, NONE
+      display: ACTION_BAR
+      message: "<gray>Respawning in <yellow><seconds></yellow><gray>..."
+      title: "<red>You Died"
+      subtitle: "<gray>Respawning in <yellow><seconds></yellow>s..."
+
+# Player Messages (MiniMessage format)
+messages:
+  death:
+    title: "<red>You Died"
+    subtitle: "<gray>Your journey ends here..."
+    fade-in: 10
+    stay: 50
+    fade-out: 20
+    chat: ""
+
+  spectator:
+    entered: ""
+    skipped: "<yellow>Respawn countdown skipped."
+    respawned: ""
+    exited: ""
+
+  errors:
+    no-permission: "<red>You do not have permission to execute this command."
+    player-not-found: "<red>Target player not found or offline."
+    not-spectating: "<red>Target player is not currently in death spectator mode."
+
+hooks:
+  placeholderapi: true
