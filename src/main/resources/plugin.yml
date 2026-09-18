@@ -1,0 +1,35 @@
+name: DeathSpectator
+version: '${version}'
+main: com.yourname.deathspectator.DeathSpectatorPlugin
+api-version: '1.21'
+description: Cinematic death spectator camera and countdown plugin.
+author: yourname
+softdepend: [PlaceholderAPI]
+
+commands:
+  deathspectator:
+    description: Main command for DeathSpectator.
+    aliases: [ds]
+    permission: deathspectator.admin
+
+permissions:
+  deathspectator.admin:
+    description: Grants full control over DeathSpectator.
+    default: op
+    children:
+      deathspectator.reload: true
+      deathspectator.force: true
+      deathspectator.stop: true
+      deathspectator.respawn: true
+  deathspectator.reload:
+    description: Allows reloading config.
+    default: op
+  deathspectator.force:
+    description: Allows forcing death spectator state on players.
+    default: op
+  deathspectator.stop:
+    description: Allows stopping death spectator sessions.
+    default: op
+  deathspectator.respawn:
+    description: Allows forcing respawn of spectating players.
+    default: op
